@@ -19,7 +19,7 @@ module.exports = {
       },
       pro_sexo: {
         allowNull: false,
-        type: Sequelize.STRING(20), //nome do proprietário do veiculo
+        type: Sequelize.CHAR(1), //nome do proprietário do veiculo
       },
       pro_nrocnh: {
         allowNull: false,
@@ -29,15 +29,12 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE, //data de validade da cnh do proprietário do veiculo
       },
-    })
+    })  
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    
+      //await queryInterface.dropTable('');
+
   }
 };

@@ -15,7 +15,7 @@ module.exports = {
       },
       vei_modelo: {
         allowNull: false,
-        type: Sequelize.STRING(20), //modelo do proprietário do veiculo
+        type: Sequelize.CHAR(20), //modelo do proprietário do veiculo
       },
       vei_cor: {
         allowNull: false,
@@ -34,5 +34,7 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
+
+      
   }
 };
