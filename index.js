@@ -1,11 +1,11 @@
 const express = require('express');
 const http = require('http');
-//const routes = require('./api/routes/route.js');
+const routes = require('./api/routes/route.js');
 
 const app = express ();
 
 app.set('url', 'http://localhost:');
-app.set('porta', 3333)
+app.set('porta', 3306)
 
 app.use(express.json());
 //app.use(routes);
