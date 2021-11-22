@@ -1,6 +1,6 @@
 const express = require('express');
 const http = require('http');
-const routes = require('./api/routes/routes.js');
+const routes = require('./api/routes/proprietario-proRoutes.js');
 
 const app = express ();
 
