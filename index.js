@@ -1,11 +1,13 @@
 const express = require('express');
 const http = require('http');
-const routes = require('./api/routes/proprietario-proRoutes.js');
+const routes = require('./src/api/routes/proprietarioproRoutes');
+
+require('./src/database/indexdb')
 
 const app = express ();
 
 app.set('url', 'http://localhost:');
-app.set('porta', 3303);
+app.set('porta', 3344);
 
 app.use(express.json());
 app.use(routes);
