@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return await queryInterface.createTable('veiculo-vei', {
+    return await queryInterface.createTable('veiculovei', {
       vei_codigo: {
         type: Sequelize.INTERGER,
         allowNull: false,
@@ -35,6 +35,7 @@ module.exports = {
 
   down: async (queryInterface, Sequelize) => {
 
-      
+    await queryInterface.dropTable('veiculosvei');
+  
   }
 };

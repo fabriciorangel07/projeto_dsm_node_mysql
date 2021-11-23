@@ -1,3 +1,5 @@
+'use strict';
+
 const { Model, DataTypes } = require ('sequelize');
 
 class Proprietarios extends Model {
@@ -11,9 +13,9 @@ class Proprietarios extends Model {
         },
         {
             sequelize,
-            modelName: 'Proprietarios'
-        })
-    }
-}
+            tableName: 'Proprietarios'
+        });
+    };
+};
 
 module.exports = Proprietarios;

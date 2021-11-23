@@ -9,5 +9,6 @@ router.get ('/', (req, res) => {
 });
 
 router.get ('./proprietarios', proprietarioproControllers.index);
+router.get ('./proprietarios', proprietarioproControllers.store);
 
 module.exports = router;
