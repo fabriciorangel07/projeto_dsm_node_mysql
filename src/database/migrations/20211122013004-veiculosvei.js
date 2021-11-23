@@ -4,7 +4,7 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     return await queryInterface.createTable('veiculovei', {
       vei_codigo: {
-        type: Sequelize.INTERGER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -27,8 +27,12 @@ module.exports = {
       },
       pro_codigo: {
         allowNull: false,
-        type: Sequelize.INTERGER, //chave estrangeira da tabela do proprietário do veiculo
+        type: Sequelize.INTEGER, //chave estrangeira da tabela do proprietário do veiculo
         foreingKey: true,
+        references: {
+          model: 'proprietariopro',
+          key: 'pro_codigo'
+        }
       },
     })
   },

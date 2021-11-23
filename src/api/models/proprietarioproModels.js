@@ -13,9 +13,13 @@ class Proprietarios extends Model {
         },
         {
             sequelize,
-            tableName: 'Proprietarios'
+            tableName: 'proprietariopro'
         });
     };
 };
+
+Proprietarios.associations = models => {
+    Proprietarios.belongsTo(models.Veiculos)
+}
 
 module.exports = Proprietarios;
