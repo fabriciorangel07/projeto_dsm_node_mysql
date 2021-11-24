@@ -1,5 +1,6 @@
 const express = require('express');
 const http = require('http');
+const Proprietarios = require('./src/api/models/proprietarioproModels');
 
 const routesProprietarios = require('./src/api/routes/proprietarioproRoutes');
 
@@ -16,4 +17,4 @@ app.use(routesProprietarios);
 
 http.createServer(app).listen(app.get('porta'), function() {
     console.log('\nServidor Rodando ' + app.get('url') + app.get('porta'));
-})  
+})
