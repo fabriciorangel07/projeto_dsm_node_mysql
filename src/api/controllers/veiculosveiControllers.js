@@ -7,12 +7,37 @@ module.exports = {
     },
 
     async store (req, res) {
-        const { pro_nome, pro_apelido, pro_sexo, pro_nrocnh, pro_datavalidade } = req.body;
-        const veiculos = await Veiculos.create ({ pro_nome, pro_apelido, pro_sexo, pro_nrocnh, pro_datavalidade });
+        const { vei_marca, vei_modelo, vei_cor, vei_anomodelo, id } = req.body;
+        const veiculos = await Veiculos.create ({ vei_marca, vei_modelo, vei_cor, vei_anomodelo, id });
         return res.status(200).send({
             status: 1,
-            message: "Proprietário cadastrado com sucesso!",
+            message: "Veiculo cadastrado com sucesso!",
             veiculos
         })
-    }
+    },
+
+    async update (req, res) {
+        const { vei_cor } = req.body;
+        const { codigo } = req.params;
+        await Veiculos.update ({
+            vei_cor },
+            {where: {
+            id: codigo}
+        });
+        return res.status(200).send ({
+            status: 1,
+            message: "Veiculo atualizado com sucesso!"
+        });
+    },
+
+    async delete (req, res) {
+        const { codigo } = req.params;
+        await Veiculos.destroy({
+            where: { id: codigo }
+        });
+        return res.status(200).send ({
+            status: 1,
+            message: "Veiculo removido com sucesso!"
+        });
+    },
 }
