@@ -7,8 +7,8 @@ module.exports = {
     },
 
     async store (req, res) {
-        const { vei_marca, vei_modelo, vei_cor, vei_anomodelo, id } = req.body;
-        const veiculos = await Veiculos.create ({ vei_marca, vei_modelo, vei_cor, vei_anomodelo, id });
+        const { vei_marca, vei_modelo, vei_cor, vei_anomodelo, pro_codigo } = req.body;
+        const veiculos = await Veiculos.create ({ vei_marca, vei_modelo, vei_cor, vei_anomodelo, pro_codigo });
         return res.status(200).send({
             status: 1,
             message: "Veiculo cadastrado com sucesso!",
