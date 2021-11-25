@@ -15,7 +15,8 @@ class Proprietarios extends Model {
             sequelize,
             tableName: 'proprietariopro'
         });
-    };
+        return this;
+    }
 };
 
 Proprietarios.associations = models => {

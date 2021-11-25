@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return await queryInterface.createTable('proprietariopro', {
-      pro_codigo: {
+      id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
@@ -29,12 +29,18 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE, //data de validade da cnh do proprietário do veiculo
       },
+      created_at: {
+        allowNull: false,
+        type: Sequelize.DATE, //data da criacao da linha
+      },
+      updated_at: {
+        allowNull: false,
+        type: Sequelize.DATE, //data da atualizacao da linha
+      },
     });
   },
 
   down: async (queryInterface, Sequelize) => {
-
     await queryInterface.dropTable('proprietariopro');
-
   },
 };

@@ -5,7 +5,6 @@ const { Model, DataTypes } = require ('sequelize');
 class Veiculos extends Model {
     static init (sequelize) {
         super.init ({
-            vei_codido: DataTypes.STRING,
             vei_marca: DataTypes.STRING,
             vei_modelo: DataTypes.STRING,
             vei_cor: DataTypes.STRING,
