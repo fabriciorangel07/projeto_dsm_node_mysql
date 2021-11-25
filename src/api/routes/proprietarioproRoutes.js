@@ -1,15 +1,14 @@
 const express = require('express');
 const router  = express.Router ();
 
-const proprietarioproControllers = require ('../controllers/proprietarioproControllers')
+const proprietarioproControllers = require ('../controllers/proprietarioproControllers');
 
+router.get('/proprietario', proprietarioproControllers.index);
 
-router.get('/proprietarios', proprietarioproControllers.index);
+router.post('/proprietario', proprietarioproControllers.store);
 
-router.post('/proprietarios', proprietarioproControllers.store);
+router.put('/proprietario/:codigo', proprietarioproControllers.update);
 
-router.put('/proprietarios/:codigo', proprietarioproControllers.update);
-
-router.delete('/proprietarios/:codigo', proprietarioproControllers.delete);
+router.delete('/proprietario/:codigo', proprietarioproControllers.delete);
 
 module.exports = router;

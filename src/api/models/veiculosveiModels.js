@@ -9,12 +9,14 @@ class Veiculos extends Model {
             vei_modelo: DataTypes.STRING,
             vei_cor: DataTypes.STRING,
             vei_anomodelo: DataTypes.STRING,
-            pro_codigo: DataTypes.STRING,
+            pro_id: DataTypes.STRING,
         },
         {
             sequelize,
-            tableName: 'veiculosvei'
+            tableName: 'veiculo'
         });
+
+        return this
     };
 };
 

@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return await queryInterface.createTable('veiculovei', {
+    return await queryInterface.createTable('veiculo', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -25,6 +25,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(10), //numero da cnh do proprietário do veiculo
       },
+      pro_id: { //chave estrangeira da tabela do proprietário do veiculo
+        allowNull: false,
+        type: Sequelize.INTEGER, 
+        foreignKey: true,
+        references: { model: 'proprietario', key: 'id'},
+        onDelete: 'CASCADE'
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE, //data da criacao da linha
@@ -33,21 +40,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE, //data da atualizacao da linha
       },
-      pro_codigo: {
-        foreingKey: true,
-        allowNull: false,
-        type: Sequelize.INTEGER, //chave estrangeira da tabela do proprietário do veiculo
-        references: {
-          model: 'proprietarioproModels',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-      },
     })
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('veiculosvei');
+    await queryInterface.dropTable('veiculo');
   }
 };

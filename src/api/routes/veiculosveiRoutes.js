@@ -3,12 +3,12 @@ const router  = express.Router ();
 
 const veiculosveiControllers = require ('../controllers/veiculosveiControllers')
 
-router.get('/veiculos', veiculosveiControllers.index);
+router.get('/veiculo', veiculosveiControllers.index);
 
-router.post('/veiculos/:pro_codigo', veiculosveiControllers.store);
+router.post('/veiculo', veiculosveiControllers.store);
 
-router.put('/veiculos/:codigo', veiculosveiControllers.update);
+router.put('/veiculo/:codigo', veiculosveiControllers.update);
 
-router.delete('/veiculos/:codigo', veiculosveiControllers.delete);
+router.delete('/veiculo/:codigo', veiculosveiControllers.delete);
 
 module.exports = router;

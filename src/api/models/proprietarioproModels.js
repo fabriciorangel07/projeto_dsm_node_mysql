@@ -13,7 +13,7 @@ class Proprietarios extends Model {
         },
         {
             sequelize,
-            tableName: 'proprietariopro'
+            tableName: 'proprietario'
         });
         return this;
     }
