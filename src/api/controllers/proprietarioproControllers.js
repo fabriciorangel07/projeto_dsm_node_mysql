@@ -17,8 +17,8 @@ module.exports = {
     },
 
     async update(req, res) {
-        const { pro_nrocnh } = req.body;
         const { codigo } = req.params;
+        const { pro_nrocnh } = req.body;
         await Proprietarios.update ({ pro_nrocnh }, {where: { id: codigo}});
         return res.status(200).send({
             status: 1,
