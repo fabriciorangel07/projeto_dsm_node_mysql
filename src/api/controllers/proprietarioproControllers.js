@@ -17,9 +17,9 @@ module.exports = {
     },
 
     async update(req, res) {
-        const { pro_nome } = req.body;
-        const { id } = req.params;
-        await Proprietarios.update ({ pro_nome }, {where: { id: id}});
+        const { pro_nrocnh } = req.body;
+        const { codigo } = req.params;
+        await Proprietarios.update ({ pro_nrocnh }, {where: { id: codigo}});
         return res.status(200).send({
             status: 1,
             message: "Proprietário atualizado com sucesso!",
@@ -27,8 +27,8 @@ module.exports = {
     },
 
     async delete(req, res) {
-        const { id } = req.params;
-        await Proprietarios.destroy({where: { id: id }});
+        const { codigo } = req.params;
+        await Proprietarios.destroy({where: { id: codigo }});
         return res.status(200).send ({
             status: 1,
             message: "Proprietário removido com sucesso!",
