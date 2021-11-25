@@ -34,11 +34,11 @@ module.exports = {
         type: Sequelize.DATE, //data da atualizacao da linha
       },
       pro_codigo: {
+        foreingKey: true,
         allowNull: false,
         type: Sequelize.INTEGER, //chave estrangeira da tabela do proprietário do veiculo
-        foreingKey: true,
         references: {
-          model: 'proprietariopro',
+          model: 'proprietarioproModels',
           key: 'id',
         },
         onUpdate: 'CASCADE',
