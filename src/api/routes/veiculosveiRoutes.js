@@ -4,7 +4,13 @@ const router  = express.Router ();
 
 const veiculosveiControllers = require ('../controllers/veiculosveiControllers')
 
-router.get('/veiculos', veiculosveiControllers.index);
-router.post('/veiculos', veiculosveiControllers.store);
+
+router.get('/veiculos', proprietarioproControllers.index);
+
+router.post('/veiculos', proprietarioproControllers.store);
+
+router.put('/veiculos', proprietarioproControllers.update);
+
+router.delete('/veiculos', proprietarioproControllers.delete);
 
 module.exports = router;
