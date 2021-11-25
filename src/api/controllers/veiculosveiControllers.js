@@ -19,11 +19,7 @@ module.exports = {
     async update (req, res) {
         const { vei_cor } = req.body;
         const { codigo } = req.params;
-        await Veiculos.update ({
-            vei_cor },
-            {where: {
-            id: codigo}
-        });
+        await Veiculos.update ({ vei_cor }, {where: {id: codigo}});
         return res.status(200).send ({
             status: 1,
             message: "Veiculo atualizado com sucesso!"
@@ -32,9 +28,7 @@ module.exports = {
 
     async delete (req, res) {
         const { codigo } = req.params;
-        await Veiculos.destroy({
-            where: { id: codigo }
-        });
+        await Veiculos.destroy({where: { id: codigo }});
         return res.status(200).send ({
             status: 1,
             message: "Veiculo removido com sucesso!"
