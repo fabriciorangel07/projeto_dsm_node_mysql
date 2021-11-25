@@ -15,20 +15,20 @@ module.exports = {
             proprietarios
         })
     },
-    
+
     async update(req, res) {
-        const { pro_nrocnh } = req.body;
-        const { codigo } = req.params;
-        await Proprietarios.update ({ pro_nrocnh }, {where: {id: codigo}});
-        return res.status(200).send ({
+        const { pro_nome } = req.body;
+        const { id } = req.params;
+        await Proprietarios.update ({ pro_nome }, {where: { id: id}});
+        return res.status(200).send({
             status: 1,
             message: "Proprietário atualizado com sucesso!",
         });
     },
 
     async delete(req, res) {
-        const { codigo } = req.params;
-        await Proprietarios.destroy({where: { id: codigo }});
+        const { id } = req.params;
+        await Proprietarios.destroy({where: { id: id }});
         return res.status(200).send ({
             status: 1,
             message: "Proprietário removido com sucesso!",

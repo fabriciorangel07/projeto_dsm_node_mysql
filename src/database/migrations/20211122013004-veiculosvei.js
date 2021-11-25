@@ -40,7 +40,9 @@ module.exports = {
         references: {
           model: 'proprietariopro',
           key: 'id',
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
     })
   },
